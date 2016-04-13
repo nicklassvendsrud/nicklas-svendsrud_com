@@ -1,0 +1,16 @@
+<div class="portfolioEntry">
+  <div class="portfolioEntryImgWrapper">
+    <div class="container">
+      <a ng-href="http://{{portfolio.entry[0].link}}">
+        <img class="portfolioEntryImg" ng-src="{{portfolio.entry[0].imgUrl}}" alt="Bilde av løsning {{portfolio.entry[0].entryTitle}}" />
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <h1 class="viewTitle portfolioEntryTitle" ng-bind-html="portfolio.entry[0].entryTitle"></h1>
+    <p class="portfolioEntryDesc" ng-bind-html="portfolio.entry[0].description"></p>
+    <div class="portfolioBtnWrapper">
+      <a href="#/portfolio"><button class="backBtn btn"><i class="fa fa-caret-square-o-left"></i> Tilbake</button></a><a ng-href="http://{{portfolio.entry[0].link}}"><button class="VisitSiteBtn btn"><i class="fa fa-sign-out"></i> Åpne siden</button></a>
+    </div>
+  </div>
+</div>

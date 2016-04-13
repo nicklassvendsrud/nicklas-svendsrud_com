@@ -1,0 +1,337 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+@import "web-fonts";
+@include web-fonts("Mr Dafoe", ("Roboto": ("300", "light")));
+
+$darkBlue: #212d41;
+$lightBlue: lighten($darkBlue, 90%);
+$almostWhite: #efefef;
+$pussyPink: #F998D5;
+$pussyPinkDark: #CC75AC;
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $darkBlue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+.mainBg{
+  background-image: url("../images/portraitFull.jpg");
+}
+.otherBg{
+  background-image: url("../images/portraitFull_blur.jpg");
+}
+p, li{
+  font-size: 1.1em;
+}
+a{
+  color: $pussyPink;
+  transition: 0.2s color linear;
+}
+a:hover{
+  color: $pussyPinkDark;
+}
+
+#mainHeader{
+  width: 400px;
+  position: fixed;
+  top: 0;
+  left: -284px;
+  z-index: 999;
+
+  #menuToggleBtn{
+    margin-top: 50px;
+    margin-left: 19%;
+    color: $almostWhite;
+    text-shadow: 0px 0px 2px $darkBlue;
+    font-size: 15px;
+    font-weight: 100;
+    display: inline !important;
+    background: none;
+    background-color: rgba(33, 45, 65, 0);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    animation: rotateMenuIcon 5s linear 1s 1 normal;
+    transition: 0.3s background-color linear;
+
+    i, .fa, .menuIconImg{
+      cursor: pointer;
+    }
+    .menuIconImg {
+      position: absolute;
+      width: 40px;
+    }
+    .closeMenuIcon {
+      width: 28px;
+    }
+  }
+
+  #mainNav{
+    padding-top: 50px;
+    width: 284px;
+    height: 100vh;
+    background-color: $darkBlue;
+    float: left;
+
+    .nav{
+      margin-left: 20px;
+      li{
+        cursor: pointer;
+        font-size: 1.2em;
+        a{
+          color: $almostWhite;
+          cursor: pointer;
+          transition: 0.4s all ease-in-out;
+        }
+        a:hover{
+          background-color: rgba(255, 255, 255, 0.3) !important;
+        }
+        .fa{
+          margin-right: 7px;
+          color: $pussyPink;
+        }
+      }
+
+    }
+  }
+}
+
+.rotateAnimationRight, .rotateAnimationRight-add, .rotateAnimationRight-add-active{
+  animation: rotateMenuIcon 0.5s linear 0.5s 3 normal;
+}
+.rotateAnimationLeft, .rotateAnimationLeft-add, .rotateAnimationLeft-add-active{
+  animation: rotateMenuIcon 0.5s linear 0.5s 3 reverse;
+}
+
+#mainHeader.ng-hide-add-active, #mainHeader.ng-hide, #mainHeader.ng-hide-add{
+  display: block !important;
+}
+
+@keyframes rotateMenuIcon {
+  0%{transform: rotate(0deg);}
+  10%{transform: rotate(360deg);}
+  100%{transform: rotate(360deg);}
+}
+
+.view.ng-enter{
+  transition: 0.3s 0.5s all ease-out;
+  opacity: 0;
+  margin-top: -80vh;
+}
+.view.ng-enter-active{
+  opacity: 1;
+  margin-top: 0;
+}
+.view.ng-leave{
+  transition: 0.3s all linear;
+  opacity: 1;
+  margin-left: 0;
+}
+.view.ng-leave-active{
+  opacity: 0;
+  margin-left: 100%;
+}
+.mainContentSection{
+  margin-top: 70px;
+  color: $almostWhite;
+  padding-bottom: 200px;
+  overflow-x: hidden;
+
+  h1, h2, h3{
+    font-weight: 300;
+  }
+  .viewTitle{
+    border-bottom: 2px solid $pussyPink;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+  }
+  .intro{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .techArticle, .cvArticle{
+    margin: 50px 0;
+  }
+  .coursesList:last-of-type{
+    margin-bottom: 20px;
+  }
+  #contactWrapper{
+    margin-left: 6%;
+
+    .fa{
+      margin-right: 3%;
+      color: $pussyPink;
+    }
+    a:link, a:visited{
+      color: $almostWhite;
+      transition: 0.2s opacity linear;
+    }
+    a:hover, a:active{
+      opacity: 0.7;
+    }
+  }
+  #portfolioWrapper{
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+
+    .portfolioThumb{
+      width: 295px;
+      height: 295px;
+      background-color: white;
+      border: 3px solid $almostWhite;
+      border-radius: 50%;
+      display: inline-block;
+      float: none;
+      text-align: left;
+      margin-right: 30px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.2s border-color linear;
+    }
+    .thumbContent{
+      background-color: $almostWhite;
+      color: $darkBlue;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      bottom: -50%;
+      left: 0;
+      box-sizing: border-box;
+      padding: 15px 27px 20px 27px;
+      transition: 0.5s all ease-out;
+
+      .thumbTitle{
+        font-size: 1.3em;
+        margin-bottom: 0;
+      }
+    }
+    .portfolioThumb:hover{
+      box-shadow: 0 0 7px $pussyPink;
+    }
+    .portfolioThumb:hover > .thumbContent{
+      bottom: 0;
+    }
+  }
+  .portfolioEntry{
+    margin-top: 25px;
+
+    .portfolioEntryImgWrapper{
+      background-color: rgba(255, 255, 255, 0.2);
+      width: 100%;
+      text-align: center;
+
+      .portfolioEntryImg{
+        max-width: 100%;
+        max-height: 600px;
+        margin: 0 auto;
+      }
+    }
+    .portfolioEntryTitle{
+      margin-top: 30px;
+      text-align: center;
+    }
+    .portfolioBtnWrapper{
+      margin: 25px auto;
+      text-align: center;
+
+      .btn{
+        padding: 5px 15px;
+        margin: 0 15px;
+        background-color: $pussyPink;
+        color: $darkBlue;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s all linear;
+      }
+      .btn:hover{
+        background-color: $almostWhite;
+        border: 1px solid $pussyPink;
+      }
+    }
+  }
+
+}
+
+#mainTitleWrapper{
+  margin-top: 300px;
+  color: $almostWhite;
+  text-shadow: 1px 1px 2px $darkBlue;
+  p{
+    font-size: 1.9em;
+    font-weight: 300;
+  }
+  #mainTitle{
+    margin: -3px 0 7px -5px;
+    text-align: center;
+    line-height: 0.8;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 7em;
+    -ms-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -webkit-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+  }
+  #mainTitleP1{
+    text-indent: 15%;
+    margin-bottom: 0;
+  }
+  #mainTitleP2{
+    text-align: right;
+    margin-top: 0;
+    margin-right: 12%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #mainHeader{
+    width: auto;
+    left: -255px;
+
+    #mainNav{
+      width: 250px;
+      padding-top: 25px;
+    }
+    #menuToggleBtn{
+      margin-left: 15px !important;
+      background: none;
+      margin-top: 25px;
+    }
+  }
+  #mainTitleWrapper{
+    margin-top: 29vh;
+    #mainTitle{
+      font-size: 5.2em;
+      margin-left: -12px;
+      margin-bottom: 13px;
+    }
+    .mainTitleP{
+      font-size: 1.6em;
+    }
+  }
+  .thumbContent{
+    bottom: 0 !important;
+  }
+}

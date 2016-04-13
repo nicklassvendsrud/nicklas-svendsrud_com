@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="viewTitle" ng-bind-html="cvTxt.title"></h1>
+  <section id="cvWorkSection">
+    <h2>Arbeidserfaring</h2>
+    <article class="cvArticle" ng-repeat="work in cvTxt.work">
+      <h4>{{work.date}} - {{work.title}} - {{work.place}}</h4>
+      <p ng-bind-html="work.description"></p>
+    </article>
+  </section>
+  <section id="cvEducationSection">
+    <h2>Skolegang</h2>
+    <article class="cvArticle" ng-repeat="education in cvTxt.education">
+      <h4>{{education.date}} - {{education.place}}</h4>
+      <p ng-bind-html="education.title"></p>
+    </article>
+  </section>
+</div>

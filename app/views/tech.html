@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="viewTitle" ng-bind-html="techTxt.title"></h1>
+  <p class="intro" ng-bind-html="techTxt.intro"></p>
+  <article class="techArticle" id="strengthsWrapper">
+    <h2 ng-bind-html="techTxt.strengths.title"></h2>
+    <ul>
+      <li ng-repeat="language in techTxt.strengths.languageList">{{language}}</li>
+    </ul>
+    <p ng-bind-html="techTxt.strengths.likes"></p>
+  </article>
+  <article class="techArticle" id="thispageWrapper">
+    <h3 ng-bind-html="techTxt.thisPage.title"></h3>
+    <p ng-bind-html="techTxt.thisPage.text"></p>
+  </article>
+  <article class="techArticle" id="otherWrapper">
+    <h2 ng-bind-html="techTxt.other.title"></h2>
+    <ul>
+      <li ng-repeat="other in techTxt.other.otherList">{{other}}</li>
+    </ul>
+  </article>
+</div>

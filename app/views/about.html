@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="viewTitle" ng-bind-html="aboutMe.title"></h1>
+  <p class="intro" ng-bind-html="aboutMe.intro"></p>
+  <p ng-bind-html="aboutMe.text1"></p>
+  <div id="courses">
+    <ul class="coursesList col-md-6">
+      <li ng-repeat="course in aboutMe.courses1">
+        {{course}}
+      </li>
+    </ul>
+    <ul class="coursesList col-md-6">
+      <li ng-repeat="course in aboutMe.courses2">
+        {{course}}
+      </li>
+    </ul>
+  </div>
+  <p ng-bind-html="aboutMe.text2"></p>
+  <p ng-bind-html="aboutMe.text3"></p>
+</div>

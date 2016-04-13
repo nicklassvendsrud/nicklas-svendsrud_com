@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="viewTitle" ng-bind-html="portfolio.title"></h1>
+  <div id="portfolioWrapper">
+    <a ng-repeat="entry in portfolio.entry" ng-href="#/portfolio/{{entry.id}}">
+      <div class="portfolioThumb col-md-4" style="background-image: url({{entry.thumbUrl}});">
+        <div class="thumbContent">
+          <p class="thumbTitle"><strong ng-bind="entry.entryTitle"></strong></p>
+          <p class="thumbType" ng-bind="entry.type"></p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
